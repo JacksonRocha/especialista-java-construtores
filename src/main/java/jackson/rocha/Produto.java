@@ -1,24 +1,22 @@
 package jackson.rocha;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Produto {
 
     private static final int QUANTIDADE_ESTOQUE_INICIAL = 100;
 
+    final String codigo;
     public String nome;
     int quantidadeEstoque;
 
     Produto() {
-        this.nome = "Sem nome";
-        this.quantidadeEstoque = QUANTIDADE_ESTOQUE_INICIAL;
+        this("Sem nome");
     }
 
     Produto(String nome) {
-        Objects.requireNonNull(nome, "Nome é obrigatório");
-
-        this.nome = nome;
-        this.quantidadeEstoque = QUANTIDADE_ESTOQUE_INICIAL;
+        this(nome, QUANTIDADE_ESTOQUE_INICIAL);
     }
 
     Produto(String nome, int estoqueInicial) {
@@ -30,6 +28,7 @@ public class Produto {
 
         this.nome = nome;
         this.quantidadeEstoque = estoqueInicial;
+        this.codigo = UUID.randomUUID().toString();
     }
 
 }
