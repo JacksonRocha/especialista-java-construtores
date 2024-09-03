@@ -6,7 +6,7 @@ public class Principal {
         System.out.println(produto1.nome);
         System.out.println(produto1.quantidadeEstoque);
 
-        Produto produto2 = new Produto("Coxão mole", 50);
+        Produto produto2 = new Produto("Coxão mole", 10);
         System.out.println(produto2.nome);
         System.out.println(produto2.quantidadeEstoque);
 
